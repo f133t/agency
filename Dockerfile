@@ -10,6 +10,6 @@ RUN \
 
 USER ubuntu
 
-RUN ls -la && pwd && bundle install
+RUN bundle install
 
 ENTRYPOINT [".docker/docker-entrypoint.sh"]
