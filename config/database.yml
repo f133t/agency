@@ -1,0 +1,40 @@
+---
+development:
+  adapter: mysql2
+  database: agency_development
+  host: <%= ENV['MYSQL_HOSTNAME'] %>
+  port: 3306
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  pool: 50
+  encoding: utf8mb4
+  charset: utf8mb4
+  collation: utf8mb4_unicode_ci
+
+test:
+  adapter: mysql2
+  <% if ENV.fetch('CUCUMBER', 'false') == 'true' %>
+  database: agency_test
+  <% else %>
+  database: <%= ENV.fetch('DB_NAME', 'agency_test') %>
+  <% end %>
+  host: <%= ENV['MYSQL_HOSTNAME'] %>
+  port: 3306
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  pool: 50
+  encoding: utf8mb4
+  charset: utf8mb4
+  collation: utf8mb4_unicode_ci
+
+production:
+  adapter: mysql2
+  database: <%= ENV.fetch('DB_NAME', 'agency') %>
+  host: <%= ENV['MYSQL_HOSTNAME'] %>
+  port: 3306
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  pool: 50
+  encoding: utf8mb4
+  charset: utf8mb4
+  collation: utf8mb4_unicode_ci
