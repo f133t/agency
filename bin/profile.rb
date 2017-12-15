@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-profile_url = ARGV.shift
+profile_urls = ARGV
 
 session = Extractor::Session.new(
   email: ENV.fetch('EMAIL'),
@@ -11,14 +11,17 @@ session = Extractor::Session.new(
 )
 
 session.sign_in!
-byebug
 
-begin
+times = [ ]
+profiles = profile_urls.map do |profile_url|
+  time_start = Time.now.to_f
   profile = session.fetch_profile!(profile_url: profile_url)
-#rescue Extractor::ProxyError => e
-#rescue Extractor::NotAuthorizedError => e
+  times << Time.now.to_f - time_start
+  profile
 end
 
-#byebug
-#puts 'yay'
+avg_time = times.inject(:+).to_f / times.count.to_f
+
+byebug
+puts 'yay'
 
