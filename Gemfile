@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~> 5.1.4'
-gem 'httparty'
 gem 'sidekiq'
 gem 'mysql2'
-#gem 'extractor-session', git: 'https://github.com/f133t/extractor-session.git'
+gem 'httparty', '0.15.6', path: 'vendor/gems/httparty'
 gem 'extractor-session', path: 'vendor/gems/extractor-session'
 
 group :development, :test do

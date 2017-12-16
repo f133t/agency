@@ -7,7 +7,7 @@ session = Extractor::Session.new(
   password: ENV.fetch('PASSWORD'),
   user_agent: ENV.fetch('USER_AGENT'),
   profile_url_template: ENV.fetch('PROFILE_URL_TEMPLATE'),
-  proxy: ENV.fetch('PROXY', nil)
+  socks_proxy: ENV.fetch('SOCKS_PROXY', nil)
 )
 
 session.sign_in!
