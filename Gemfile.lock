@@ -115,6 +115,8 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (4.0.1)
+    redis-namespace (1.6.0)
+      redis (>= 3.0.4)
     ruby_dep (1.5.0)
     sidekiq (5.0.5)
       concurrent-ruby (~> 1.0)
@@ -152,8 +154,10 @@ DEPENDENCIES
   extractor-session!
   httparty (= 0.15.6)!
   listen (>= 3.0.5, < 3.2)
+  mail
   mysql2
   rails (~> 5.1.4)
+  redis-namespace
   sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)

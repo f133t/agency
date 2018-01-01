@@ -36,6 +36,6 @@ module Extractor
       @redis ||= Redis.new(url: 'redis://%s:%d/0' % [ ENV['REDIS_HOSTNAME'], ENV['REDIS_PORT'] ])
     end
 
-    config.sessions = []
+    config.profile_url_template = ENV.fetch('PROFILE_URL_TEMPLATE')
   end
 end

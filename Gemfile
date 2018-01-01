@@ -2,9 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 5.1.4'
 gem 'sidekiq'
+gem 'redis-namespace'
 gem 'mysql2'
 gem 'httparty', '0.15.6', path: 'vendor/gems/httparty'
 gem 'extractor-session', path: 'vendor/gems/extractor-session'
+gem 'mail'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
